@@ -9,5 +9,8 @@ services:
       - ./data:/srv
       - ./config.json:/config.json
       - ./database.db:/etc/database.db
-    ports:
-      - "8080:80"
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true
